@@ -6,9 +6,18 @@ export const content = [
         id: 'about',
         topLine: 'Premium Websites',
         headline: 'Sleek Website Solutions',
-        description: 'Contact us to have your website built today.',
+        description: 'Whether you need a small static website with a memorable name for customers to find when they turn to google, or a complex website with a lot of moving parts, we have you covered. Contact us to have your website built today.',
         buttonLabel: 'Get Started',
+        img: jpg2,
+        alt: 'Image showing a desk with two computer monitors displaying a website alongside a code editor.'
+    },
+    {
+        id: 'discover',
+        topLine: 'Portfolio',
+        healine: 'Browse Our Previous Work',
+        description: 'Browse a selection of past websites. See a design or element that catches your eye? Let us know, we\'ll incorporate it into your your website.',
+        buttonLabel: 'To The Gallery',
         img: jpg1,
-        alt: 'temp alt text'
+        alt: 'Image of a laptop on a wooden surface next to a bundle of white flowers displaying a web page.'
     }
 ]
