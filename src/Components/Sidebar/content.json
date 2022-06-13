@@ -1,0 +1,14 @@
+[
+    {
+        "to": "about",
+        "content": "About"
+    },
+    {
+        "to": "discover",
+        "content": "Discover"
+    },
+    {
+        "to": "services",
+        "content": "Services"
+    }
+]
