@@ -14,6 +14,7 @@ import {
   lightHighlight,
 } from "../Theme/colors";
 import InfoSection from '../Components/InfoSection'
+import Services from '../Components/ServicesSection'
 
 const Home = () => {
   const getTheme = (dark, hc) =>
@@ -105,6 +106,16 @@ const Home = () => {
             highlightText2={darkHighlight}
           />
         );})}
+        <Services
+          siteBg={theme.siteBg} 
+          siteText={theme.siteText}
+          elementBg={theme.elementBg}
+          elementText={theme.elementText}
+          highlightBg1={darkHighlight}
+          highlightText1={lightHighlight}
+          highlightBg2={lightHighlight}
+          highlightText2={darkHighlight}
+        />
     </>
   );
 }
