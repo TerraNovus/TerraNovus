@@ -85,21 +85,32 @@ const Home = () => {
         hoverHighlightText={darkHighlight}
         opacity={heroAlpha}
       />
-      {infoContent.map(e => {
+      {infoContent.map((e,i) => {
         return (
           <InfoSection
             id={e.id}
             key={e.id + "-info"}
-            imgOnLeft={typeof e.imgOnLeft == "boolean" 
-              ? e.imgOnLeft : false}
+            imgOnLeft={typeof e.imgOnLeft == "boolean" ? e.imgOnLeft : false}
             topLine={e.topLine}
             headline={e.headline}
             description={e.description}
             buttonLabel={e.buttonLabel}
             img={e.img}
             alt={e.alt}
-            siteBg={theme.siteBg}
-            siteText={theme.siteText}
+            siteBg={
+              e.background
+                ? e.background
+                : i % 2 == 0
+                ? theme.siteBg
+                : getTheme(!theme.darkMode, theme.highContrast).siteBg
+            }
+            siteText={
+              e.txtColor
+                ? e.txtColor
+                : i % 2 == 0
+                ? theme.siteText
+                : getTheme(!theme.darkMode, theme.highContrast).siteText
+            }
             highlightBg1={darkHighlight}
             highlightText1={lightHighlight}
             highlightBg2={lightHighlight}
