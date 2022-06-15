@@ -1,5 +1,6 @@
 import React from 'react'
-import {Button} from '../ButtonElement'
+import RouteButton from '../RouteButton'
+import ScrollButton from '../ScrollButton'
 import { 
     InfoContainer,
     InfoWrapper,
@@ -16,6 +17,8 @@ import {
 
 const InfoSection = ({
     id,
+    to,
+    route,
     imgOnLeft,
     topLine,
     headline,
@@ -30,42 +33,64 @@ const InfoSection = ({
     highlightBg2,
     highlightText2
 }) => {
-  return (
-    <>
-        <InfoContainer id={id} background={siteBg}>
-            <InfoWrapper>
-                <InfoRow imgOnLeft={imgOnLeft}>
-                    <Column1>
-                        <TopLine txtColor={highlightText2}>{topLine}</TopLine> 
-                        <Heading txtColor={siteText}>{headline}</Heading>
-                        <Subtitle txtColor={siteText}>{description}</Subtitle>
-                        <BtnWrap>
-                            <Button 
-                                to='Home'
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                                exact='true'
-                                offset={-80}
-                                background={highlightBg1}
-                                txtcolor={highlightText1}
-                                hoverbg={highlightBg2}
-                                hovertxtcolor={highlightText2}
-                            >
-                                {buttonLabel}
-                            </Button>
-                        </BtnWrap>
-                    </Column1>
-                    <Column2>
-                        <ImgWrap>
-                            <Img src={img} alt={alt}/> 
-                        </ImgWrap>
-                    </Column2>
-                </InfoRow>
-            </InfoWrapper>
-        </InfoContainer>
-    </>
-  )
+
+    var buttonElement = route ?
+        (
+            <RouteButton
+                to={to}
+                smooth='true'
+                duration={500}
+                spy='true'
+                exact='true'
+                offset={-80}
+                background={highlightBg1}
+                txtcolor={highlightText1}
+                hoverbg={highlightBg2}
+                hovertxtcolor={highlightText2}
+            >
+                {buttonLabel}
+            </RouteButton>
+        ) :
+        (
+            <ScrollButton
+                to={to}
+                smooth='true'
+                duration={500}
+                spy={true}
+                exact='true'
+                offset={-80}
+                background={highlightBg1}
+                txtcolor={highlightText1}
+                hoverbg={highlightBg2}
+                hovertxtcolor={highlightText2}
+            >
+                {buttonLabel}
+            </ScrollButton>
+        )
+
+    return (
+        <>
+            <InfoContainer id={id} background={siteBg}>
+                <InfoWrapper>
+                    <InfoRow imgOnLeft={imgOnLeft}>
+                        <Column1>
+                            <TopLine txtColor={highlightText2}>{topLine}</TopLine> 
+                            <Heading txtColor={siteText}>{headline}</Heading>
+                            <Subtitle txtColor={siteText}>{description}</Subtitle>
+                            <BtnWrap>
+                                {buttonElement}
+                            </BtnWrap>
+                        </Column1>
+                        <Column2>
+                            <ImgWrap>
+                                <Img src={img} alt={alt}/> 
+                            </ImgWrap>
+                        </Column2>
+                    </InfoRow>
+                </InfoWrapper>
+            </InfoContainer>
+        </>
+    )
 }
 
 export default InfoSection

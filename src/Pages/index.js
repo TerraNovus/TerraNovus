@@ -49,7 +49,7 @@ const Home = () => {
     });
   };
 
-  document.getElementsByTagName('html')[0].style.background = theme.siteBg
+  // document.getElementsByTagName('html')[0].style.background = theme.siteBg
 
   return (
     <>
@@ -90,6 +90,8 @@ const Home = () => {
           <InfoSection
             id={e.id}
             key={e.id + "-info"}
+            to={e.to}
+            route={e.route ? true : false}
             imgOnLeft={typeof e.imgOnLeft == "boolean" ? e.imgOnLeft : false}
             topLine={e.topLine}
             headline={e.headline}

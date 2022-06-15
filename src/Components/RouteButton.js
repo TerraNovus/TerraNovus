@@ -1,7 +1,8 @@
-import styled from 'styled-components'
-import {Link} from 'react-scroll'
 
-export const Button = styled(Link)`
+import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+
+const Button = styled(Link)`
     border-radius: 50px;
     background: ${props => props.background};
     white-space: nowrap;
@@ -15,6 +16,7 @@ export const Button = styled(Link)`
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
+    text-decoration: none;
 
     &:hover {
         transition: all 0.2s ease-in-out;
@@ -22,3 +24,4 @@ export const Button = styled(Link)`
         color: ${props => props.hovertxtcolor};
     }
 `
+export default Button

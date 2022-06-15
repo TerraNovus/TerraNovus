@@ -24,8 +24,8 @@ const Services = ({
     <ServicesContainer id='services' background={siteBg}>
         <ServicesH1 txtColor={siteText}>Our Services</ServicesH1>
         <ServicesWrapper>
-            {content.map(e => (
-                <ServicesCard background={elementBg}>
+            {content.map((e,i) => (
+                <ServicesCard key={`service-${i}`} background={elementBg}>
                     <ServicesIcon src={e.img} />
                     <ServicesH2 txtColor={highlightText2}>{e.heading}</ServicesH2>
                     <ServicesP>{e.description}</ServicesP>
