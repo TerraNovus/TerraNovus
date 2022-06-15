@@ -71,7 +71,7 @@ function App() {
       />
       <Routes>
         <Route path='/' element={<Home theme={theme} getTheme={getTheme}/>} exact />
-        <Route path='/portfolio' element={<Portfolio />} exact />
+        <Route path='/portfolio' element={<Portfolio background={theme.siteBg} txtColor={darkHighlight} />} exact />
       </Routes>
     </Router>
   );
