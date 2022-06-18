@@ -15,6 +15,7 @@ import {
   darkHighlight,
   lightHighlight,
 } from "./Theme/colors";
+import Footer from './Components/Footer';
 
 function App() {
   const getTheme = (dark, hc) =>
@@ -73,6 +74,16 @@ function App() {
         <Route path='/' element={<Home theme={theme} getTheme={getTheme}/>} exact />
         <Route path='/portfolio' element={<Portfolio background={theme.siteBg} txtColor={darkHighlight} />} exact />
       </Routes>
+      <Footer 
+        siteBg={theme.siteBg}
+        siteText={theme.siteText}
+        elementBg={theme.elementBg}
+        elementText={theme.elementText}
+        highlightBg={darkHighlight}
+        highlightText={lightHighlight}
+        hoverHighlightBg={lightHighlight}
+        hoverHighlightText={darkHighlight}
+      />
     </Router>
   );
 }

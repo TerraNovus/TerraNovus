@@ -1,0 +1,115 @@
+[
+    [
+        {
+            "id": "about-us",
+            "header": "About Us",
+            "items": [
+                {
+                    "id": "how-it-works",
+                    "to": "/how-it-works",
+                    "content": "How It Works"
+                },
+                {
+                    "id": "testimonials",
+                    "to": "/testimonials",
+                    "content": "Testimonials"
+                },
+                {
+                    "id": "careers",
+                    "to": "/careers",
+                    "content": "Careers"
+                },
+                {
+                    "id": "investors",
+                    "to": "/investors",
+                    "content": "Investors"
+                },
+                {
+                    "id": "terms-of-service",
+                    "to": "/terms-of-service",
+                    "content": "Terms of Service"
+                }
+            ]
+        },
+        {
+            "id": "contact-us",
+            "header": "Contact Us",
+            "items": [
+                {
+                    "id": "contact",
+                    "to": "/contact",
+                    "content": "contact"
+                },
+                {
+                    "id": "support",
+                    "to": "/support",
+                    "content": "support"
+                },
+                {
+                    "id": "destinations",
+                    "to": "/destinations",
+                    "content": "Destinations"
+                },
+                {
+                    "id": "sponsorships",
+                    "to": "/sponsorships",
+                    "content": "Sponsorships"
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "id": "Videos",
+            "header": "Videos",
+            "items": [
+                {
+                    "id": "submit-video",
+                    "to": "/submit-video",
+                    "content": "Submit Video"
+                },
+                {
+                    "id": "ambassadors",
+                    "to": "/ambassadors",
+                    "content": "Ambassadors"
+                },
+                {
+                    "id": "agency",
+                    "to": "/agency",
+                    "content": "Agency"
+                },
+                {
+                    "id": "influencer",
+                    "to": "/influencer",
+                    "content": "Influencer"
+                }
+            ]
+        },
+        {
+            "id": "social-media",
+            "header": "Social Media",
+            "items": [
+                {
+                    "id": "instagram",
+                    "to": "/instagram",
+                    "content": "Instagram"
+                },
+                {
+                    "id": "facebook",
+                    "to": "/facebook",
+                    "content": "Facebook"
+                },
+                {
+                    "id": "youtube",
+                    "to": "/youtube",
+                    "content": "YouTube"
+                },
+                {
+                    "id": "twitter",
+                    "to": "/twitter",
+                    "content": "Twitter"
+                }
+            ]
+        }
+    ]
+]
