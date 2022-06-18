@@ -1,6 +1,6 @@
 import './App.css';
-import { useState } from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { Routes, Route,useLocation } from "react-router-dom";
 import Home from './Pages/'
 import Portfolio from './Pages/portfolio';
 import Sidebar from './Components/Sidebar'
@@ -18,6 +18,8 @@ import {
 import Footer from './Components/Footer';
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {window.scrollTo(0,0)}, [location])
   const getTheme = (dark, hc) =>
     dark ? (hc ? DarkTheme_hc : DarkTheme) : hc ? LightTheme_hc : LightTheme;
 
@@ -47,7 +49,7 @@ function App() {
   document.getElementsByTagName('html')[0].style.background = theme.siteBg
 
   return (
-    <Router className="App">
+    <>
       <Sidebar isOpen={sidebarOpen}
         toggle={toggleSidebar}
         siteBg={theme.siteBg}
@@ -84,7 +86,7 @@ function App() {
         hoverHighlightBg={lightHighlight}
         hoverHighlightText={darkHighlight}
       />
-    </Router>
+    </>
   );
 }
 
