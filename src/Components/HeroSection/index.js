@@ -28,31 +28,41 @@ const HeroSection = ({
     const onHover = () => {setHover(!hover)}
 
     return (
-        <HeroContainer background={siteBg}>
-            <HeroBg>
-                <VideoBg background={siteBg} autoPlay loop muted src={Video} type='video/mp4' />
-            </HeroBg>
-            <HeroContent background={siteBg} opacity={opacity}>
-                <HeroH1 txtColor={siteText}>Terra Novus</HeroH1>
-                <HeroSubtitle txtColor={siteText}>Simple and Clean Website Solutions</HeroSubtitle>
-                <HeroP txtColor={siteText}>
-                    Contact me to get your new website up and running today.
-                </HeroP>
-                <HeroBtnWrapper>
-                    <Button to='signup' 
-                        onMouseEnter={onHover} 
-                        onMouseLeave={onHover}
-                        background={highlightBg}
-                        txtcolor={highlightText}
-                        hoverbg={hoverHighlightBg}
-                        hovertxtcolor={hoverHighlightText}
-                        >
-                        Get started {hover ? <ArrowForward /> : <ArrowRight />}
-                    </Button>
-                </HeroBtnWrapper>
-            </HeroContent>
-        </HeroContainer>
-    )
+      <HeroContainer background={siteBg}>
+        <HeroBg>
+          <VideoBg
+            background={siteBg}
+            autoPlay
+            loop
+            muted
+            src={Video}
+            type="video/mp4"
+          />
+        </HeroBg>
+        <HeroContent background={siteBg} opacity={opacity}>
+          <HeroH1 txtColor={siteText}>Terra Novus</HeroH1>
+          <HeroSubtitle txtColor={siteText}>
+            Simple and Clean Website Solutions
+          </HeroSubtitle>
+          <HeroP txtColor={siteText}>
+            Contact me to get your new website up and running today.
+          </HeroP>
+          <HeroBtnWrapper>
+            <Button
+              to="signup"
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+              background={highlightBg}
+              txtcolor={highlightText}
+              hoverbg={hoverHighlightBg}
+              hovertxtcolor={hoverHighlightText}
+            >
+              Get started {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </HeroBtnWrapper>
+        </HeroContent>
+      </HeroContainer>
+    );
 }
 
 export default HeroSection
