@@ -1,10 +1,10 @@
 import React from 'react'
 import UnderConstruction from '../Components/UnderConstruction'
 
-const Portfolio= ({background}) => {
+const Values = ({background}) => {
   return (
     <UnderConstruction background={background} />
   )
 }
 
-export default Portfolio
+export default Values

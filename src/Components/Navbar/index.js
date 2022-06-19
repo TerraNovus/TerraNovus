@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {FaBars} from 'react-icons/fa'
+import { useLocation } from 'react-router-dom';
 import content from './content.json'
 import {
     Nav,
@@ -26,49 +27,59 @@ const Navbar = ({
     hoverHighlightText,
     opacity,
 }) => {
+    const location = useLocation();
+
     var logoElement = logoImg ? <NavLogoImg src={logoImg} alt='logo' /> : logoText
 
     return (
-        <>
+      <>
         <Nav background={siteBg} alpha={opacity}>
-            <NavContainer>
+          <NavContainer>
             <NavLogo to="/" color={highlightBg}>
-                {logoElement}
+              {logoElement}
             </NavLogo>
-            <MobileIcon 
-                onClick={toggle} 
-                txtColor={highlightText}
-                hoverTxtColor={highlightBg}
+            <MobileIcon
+              onClick={toggle}
+              txtColor={highlightText}
+              hoverTxtColor={highlightBg}
             >
-                <FaBars />
+              <FaBars />
             </MobileIcon>
             <NavMenu>
-                {content.map(e => (
-                    <NavItem key={e.to + '-link'}>
-                        <NavLink 
-                            to={e.to} 
-                            txtcolor={siteText}
-                            activecolor={highlightBg}
-                        >
-                            {e.content}
-                        </NavLink>
-                    </NavItem>
+              {content
+                .filter(e =>
+                  e.paths
+                    ? e.paths.includes(location.pathname)
+                    : e.excludedPaths
+                    ? !e.excludedPaths.includes(location.pathname)
+                    : true
+                )
+                .map(e => (
+                  <NavItem key={e.to + "-link"}>
+                    <NavLink
+                      to={e.to}
+                      txtcolor={siteText}
+                      activecolor={highlightBg}
+                    >
+                      {e.content}
+                    </NavLink>
+                  </NavItem>
                 ))}
             </NavMenu>
             <NavBtn>
-                <NavBtnLink 
-                    to="/signup"
-                    background={highlightBg}
-                    txtcolor={highlightText}
-                    hoverbg={hoverHighlightBg}
-                    hovertxtcolor={hoverHighlightText}
-                >
-                    Sign In
-                </NavBtnLink>
+              <NavBtnLink
+                to="/signin"
+                background={highlightBg}
+                txtcolor={highlightText}
+                hoverbg={hoverHighlightBg}
+                hovertxtcolor={hoverHighlightText}
+              >
+                Sign In
+              </NavBtnLink>
             </NavBtn>
-            </NavContainer>
+          </NavContainer>
         </Nav>
-        </>
+      </>
     );
 };
 

@@ -9,6 +9,7 @@ export const content = [
         description: 'Whether you need a small static website with a memorable name for customers to find when they turn to google, or a complex website with a lot of moving parts, we have you covered. Contact us to have your website built today.',
         buttonLabel: 'Get Started',
         to: 'Home',
+        route: true,
         img: jpg2,
         alt: 'Image showing a desk with two computer monitors displaying a website alongside a code editor.'
     },

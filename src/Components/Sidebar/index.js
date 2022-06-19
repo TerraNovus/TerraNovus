@@ -1,5 +1,6 @@
 import React from 'react'
-import content from './content.json'
+import { useLocation } from 'react-router-dom';
+import content from './content.js'
 import { 
     SidebarContainer, 
     Icon, 
@@ -16,35 +17,46 @@ const Sidebar = ({
   toggle,
   siteBg,
   siteText,
-  elementBg,
-  elementText,
   highlightBg,
   highlightText,
   hoverHighlightBg,
   hoverHighlightText,
 }) => {
+  const location = useLocation();
+
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle} background={siteBg}>
       <Icon onClick={toggle}>
-        <CloseIcon txtcolor={highlightText} hovertxtcolor={hoverHighlightText} />
+        <CloseIcon
+          txtcolor={highlightText}
+          hovertxtcolor={hoverHighlightText}
+        />
       </Icon>
       <SidebarWrapper txtColor={siteText}>
         <SidebarMenu>
-          {content.map(e => (
-            <SidebarLink
-              to={e.to}
-              onClick={toggle}
-              txtcolor={siteText}
-              hovertxtcolor={hoverHighlightText}
-              key={e.to + '-link'}
-            >
-              {e.content}
-            </SidebarLink>
-          ))}
+          {content
+            .filter(e => (
+              e.paths
+                ? e.paths.includes(location.pathname)
+                : e.excludedPaths
+                ? !e.excludedPaths.includes(location.pathname)
+                : true
+            ))
+            .map((e) => (
+              <SidebarLink
+                to={e.to}
+                onClick={toggle}
+                txtcolor={siteText}
+                hovertxtcolor={hoverHighlightText}
+                key={e.to + "-link"}
+              >
+                {e.content}
+              </SidebarLink>
+            ))}
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute
-            to="/signup"
+            to="/signin"
             background={highlightBg}
             txtcolor={highlightText}
             hoverbg={hoverHighlightBg}

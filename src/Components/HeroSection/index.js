@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Video from '../../Videos/HeroVideo1 - Red Compressed.m4v'
-import Button from '../ScrollButton'
+import Button from '../RouteButton'
 import {
     HeroContainer,
     HeroBg,
@@ -15,6 +15,7 @@ import {
 } from './HeroElements.js'
 
 const HeroSection = ({
+    id,
     siteBg,
     siteText,
     highlightBg,
@@ -28,7 +29,7 @@ const HeroSection = ({
     const onHover = () => {setHover(!hover)}
 
     return (
-      <HeroContainer background={siteBg}>
+      <HeroContainer id={id} background={siteBg}>
         <HeroBg>
           <VideoBg
             background={siteBg}
@@ -49,7 +50,7 @@ const HeroSection = ({
           </HeroP>
           <HeroBtnWrapper>
             <Button
-              to="signup"
+              to="/signup"
               onMouseEnter={onHover}
               onMouseLeave={onHover}
               background={highlightBg}

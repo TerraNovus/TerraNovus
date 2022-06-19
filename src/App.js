@@ -1,10 +1,9 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Routes, Route,useLocation } from "react-router-dom";
-import Home from './Pages/'
-import Portfolio from './Pages/portfolio';
 import Sidebar from './Components/Sidebar'
 import Navbar from './Components/Navbar'
+import routingData from './Pages/RoutingData';
 import whiteLogo from './Images/TerraNovus_logo_01_REDROSES.png'
 import redLogo from './Images/TerraNovus_logo_01_REDTEXT.png'
 import {
@@ -19,6 +18,7 @@ import Footer from './Components/Footer';
 
 function App() {
   const location = useLocation();
+  
   useEffect(() => {window.scrollTo(0,0)}, [location])
   const getTheme = (dark, hc) =>
     dark ? (hc ? DarkTheme_hc : DarkTheme) : hc ? LightTheme_hc : LightTheme;
@@ -50,7 +50,8 @@ function App() {
 
   return (
     <>
-      <Sidebar isOpen={sidebarOpen}
+      <Sidebar
+        isOpen={sidebarOpen}
         toggle={toggleSidebar}
         siteBg={theme.siteBg}
         siteText={theme.siteText}
@@ -61,10 +62,10 @@ function App() {
         hoverHighlightBg={lightHighlight}
         hoverHighlightText={darkHighlight}
       />
-      <Navbar 
-        toggle={toggleSidebar} 
-        logoImg={logo} 
-        siteBg={theme.siteBg} 
+      <Navbar
+        toggle={toggleSidebar}
+        logoImg={logo}
+        siteBg={theme.siteBg}
         siteText={theme.siteText}
         highlightBg={darkHighlight}
         highlightText={lightHighlight}
@@ -73,10 +74,16 @@ function App() {
         opacity={navAlpha}
       />
       <Routes>
-        <Route path='/' element={<Home theme={theme} getTheme={getTheme}/>} exact />
-        <Route path='/portfolio' element={<Portfolio background={theme.siteBg} txtColor={darkHighlight} />} exact />
+        {routingData.map(e => (
+          <Route
+            key={`${e.id}-route`}
+            path={e.path}
+            element={e.getElement({theme,getTheme})}
+            exact
+          />
+        ))}
       </Routes>
-      <Footer 
+      <Footer
         siteBg={theme.siteBg}
         siteText={theme.siteText}
         elementBg={theme.elementBg}

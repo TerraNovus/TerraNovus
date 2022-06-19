@@ -9,7 +9,7 @@ import {
   ConstructionImg,
 } from "./ConstructionElements";
 
-const UnderConstruction = ({background, txtColor}) => {
+const UnderConstruction = ({background}) => {
   return (
     <ConstructionContainer background={background}>
       <ConstructionBg>

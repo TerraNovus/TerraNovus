@@ -1,14 +1,28 @@
 [
     {
+        "to": "/",
+        "content": "Home",
+        "excludedPaths": ["/"],
+        "paths": []
+    },
+    {
+        "to": "top",
+        "content": "Top",
+        "paths": []
+    },
+    {
         "to": "about",
-        "content": "About"
+        "content": "About",
+        "paths": ["/"]
     },
     {
         "to": "discover",
-        "content": "Discover"
+        "content": "Discover",
+        "paths": ["/"]
     },
     {
         "to": "services",
-        "content": "Services"
+        "content": "Services",
+        "paths": ["/"]
     }
 ]

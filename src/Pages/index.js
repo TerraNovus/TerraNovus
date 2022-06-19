@@ -15,6 +15,7 @@ const Home = ({theme, getTheme}) => {
   return (
     <>
       <HeroSection 
+        id='top'
         siteBg={theme.siteBg}
         siteText={theme.siteText}
         highlightBg={darkHighlight}
