@@ -13,6 +13,7 @@ import {
 } from './SidebarElements'
 
 const Sidebar = ({
+  exclude,
   isOpen,
   toggle,
   siteBg,

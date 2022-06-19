@@ -11,8 +11,6 @@ import {
   DarkTheme_hc,
   LightTheme,
   LightTheme_hc,
-  darkHighlight,
-  lightHighlight,
 } from "./Theme/colors";
 import Footer from './Components/Footer';
 
@@ -43,34 +41,41 @@ function App() {
   const toggleHighContrast = () => setTheme({
     darkMode: theme.darkMode,
     highContrast: !theme.highContrast,
-    ...getTheme(theme.darkMode, !theme.highContrast)
+    ...getTheme(theme.darkMode, !theme.highContrast),
   })
+
+  const excludeNav = routingData.filter(e => e.excludeNav && true)
+  .map(e => e.path)
+  const excludeFooter = routingData.filter(e => e.excludeFooter && true)
+  .map(e => e.path)
 
   document.getElementsByTagName('html')[0].style.background = theme.siteBg
 
   return (
     <>
       <Sidebar
+        exclude={excludeNav.includes(location.pathname)}
         isOpen={sidebarOpen}
         toggle={toggleSidebar}
         siteBg={theme.siteBg}
         siteText={theme.siteText}
         elementBg={theme.elementBg}
         elementText={theme.elementText}
-        highlightBg={darkHighlight}
-        highlightText={lightHighlight}
-        hoverHighlightBg={lightHighlight}
-        hoverHighlightText={darkHighlight}
+        highlightBg={theme.darkHighlight}
+        highlightText={theme.lightHighlight}
+        hoverHighlightBg={theme.lightHighlight}
+        hoverHighlightText={theme.darkHighlight}
       />
       <Navbar
+        exclude={excludeNav.includes(location.pathname)}
         toggle={toggleSidebar}
         logoImg={logo}
         siteBg={theme.siteBg}
         siteText={theme.siteText}
-        highlightBg={darkHighlight}
-        highlightText={lightHighlight}
-        hoverHighlightBg={lightHighlight}
-        hoverHighlightText={darkHighlight}
+        highlightBg={theme.darkHighlight}
+        highlightText={theme.lightHighlight}
+        hoverHighlightBg={theme.lightHighlight}
+        hoverHighlightText={theme.darkHighlight}
         opacity={navAlpha}
       />
       <Routes>
@@ -84,14 +89,15 @@ function App() {
         ))}
       </Routes>
       <Footer
+        exclude={excludeFooter.includes(location.pathname)}
         siteBg={theme.siteBg}
         siteText={theme.siteText}
         elementBg={theme.elementBg}
         elementText={theme.elementText}
-        highlightBg={darkHighlight}
-        highlightText={lightHighlight}
-        hoverHighlightBg={lightHighlight}
-        hoverHighlightText={darkHighlight}
+        highlightBg={theme.darkHighlight}
+        highlightText={theme.lightHighlight}
+        hoverHighlightBg={theme.lightHighlight}
+        hoverHighlightText={theme.darkHighlight}
       />
     </>
   );

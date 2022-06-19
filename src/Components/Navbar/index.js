@@ -18,6 +18,7 @@ import {
 
 const Navbar = ({
     toggle,
+    exclude,
     logoImg,
     logoText,
     siteBg,
@@ -34,17 +35,23 @@ const Navbar = ({
 
     const changeNav = () => window.scrollY >= 80 ? setScrollNav(true) : setScrollNav(false);
 
+
     useEffect(() => {window.addEventListener('scroll', changeNav)}, [])
 
     var logoElement = logoImg ? <NavLogoImg src={logoImg} alt='logo' /> : logoText
 
     return (
       <>
-        <Nav background={siteBg} alpha={opacity} scrollNav={scrollNav}>
+        <Nav
+          background={siteBg}
+          alpha={opacity}
+          scrollNav={scrollNav}
+          exclude={exclude}
+        >
           <NavContainer>
-            <NavLogo 
-              to="/" 
-              onClick={location.pathname == '/' ? scroll.scrollToTop : () => {}} 
+            <NavLogo
+              to="/"
+              onClick={location.pathname == "/" ? scroll.scrollToTop : () => {}}
               color={highlightBg}
             >
               {logoElement}

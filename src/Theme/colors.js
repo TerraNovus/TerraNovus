@@ -1,5 +1,6 @@
 //---COLORS---//
 export const bloodred = '#880808'
+export const darkred = '#8b0000'
 
 export const lightred = '#ff726f'
 export const vividred = '#f70d1a'
@@ -19,7 +20,10 @@ export const white2 = '#f7f8fa'
 /* hc = high contrast */
 
 export const darkHighlight = bloodred
+export const darkHighlight2 = darkred
 export const lightHighlight = white
+
+export const highlights = {darkHighlight, darkHighlight2, lightHighlight}
 
 export const darkBgSite = black
 export const darkBgSite_hc = black
@@ -46,26 +50,30 @@ export const DarkTheme = {
     siteBg: darkBgSite,
     siteText: lightTextSite,
     elementBg: lightBgElement,
-    elementText: darkTextElement
+    elementText: darkTextElement,
+    ...highlights
 }
 
 export const DarkTheme_hc = {
     siteBg: darkBgSite_hc,
     siteText: lightTextSite_hc,
     elementBg: lightBgElement_hc,
-    elementText: darkTextElement_hc
+    elementText: darkTextElement_hc,
+    ...highlights
 }
 
 export const LightTheme = {
     siteBg: lightBgSite,
     siteText: darkTextSite,
     elementBg: darkBgElement,
-    elementText: lightTextElement
+    elementText: lightTextElement,
+    ...highlights
 }
 
 export const LightTheme_hc = {
     siteBg: lightBgSite_hc,
     siteText: darkTextSite_hc,
     elementBg: darkBgElement_hc,
-    elementText: lightTextElement_hc
+    elementText: lightTextElement_hc,
+    ...highlights
 }

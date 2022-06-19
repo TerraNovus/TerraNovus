@@ -1,9 +1,6 @@
 import Home from ".";
-import Careers from "./careers";
-import Portfolio from "./portfolio";
-import Signin from "./signin";
-import Signup from "./signup";
-import Values from "./values";
+import Signin from "../Components/Signin";
+import UnderConstruction from "../Components/UnderConstruction";
 
 const routingData = [
     {
@@ -17,35 +14,40 @@ const routingData = [
         id: 'portfolio',
         path: '/portfolio',
         getElement: props => (
-            <Portfolio background={props.theme.siteBg} />
+            <UnderConstruction background={props.theme.siteBg} />
         )
     },
     {
         id: 'signup',
         path: '/signup',
         getElement: props => (
-            <Signup background={props.theme.background} />
+            <UnderConstruction background={props.theme.background} />
         )
     },
     {
         id: 'signin',
         path: '/signin',
         getElement: props => (
-            <Signin background={props.theme.background} />
+            <UnderConstruction background={props.theme.background} />
         )
+        /*excludeNav: true,
+        excludeFooter: true,
+        getElement: props => (
+            <Signin theme={props.theme} />
+        )*/
     },
     {
         id: 'values',
         path: '/values',
         getElement: props => (
-            <Values background={props.theme.background} />
+            <UnderConstruction background={props.theme.background} />
         )
     },
     {
         id: 'careers',
         path: '/careers',
         getElement: props => (
-            <Careers background={props.theme.background} />
+            <UnderConstruction background={props.theme.background} />
         )
     }
 ]

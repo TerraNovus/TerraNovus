@@ -23,6 +23,7 @@ import {
 import { FaFacebook } from 'react-icons/fa';
 
 const Footer = ({
+    exclude,
     siteBg,
     siteText,
     elementBg,
@@ -35,7 +36,7 @@ const Footer = ({
   const location = useLocation();
 
   return (
-    <FooterContainer background={siteBg}>
+    <FooterContainer background={siteBg} exclude={exclude}>
       <FooterWrap>
         <FooterLinksContainer>
           {content.map((e, i) => (
