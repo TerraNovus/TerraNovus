@@ -4,7 +4,11 @@ import {Link as LinkScroll} from 'react-scroll'
 import hexRgb from 'hex-rgb';
 
 export const Nav = styled.nav`
-    background: ${({background, alpha}) => hexRgb(background,{alpha,format:'css'})};
+    background: ${({background, alpha, scrollNav}) => (
+      scrollNav 
+        ? hexRgb(background, { alpha, format: "css" }) 
+        : "transparent"
+    )};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -15,10 +19,10 @@ export const Nav = styled.nav`
     top: 0;
     z-index: 10;
 
-    @media screen and (max-width: 960px){
+    @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
     }
-`
+`;
 
 export const NavContainer = styled.div`
     display: flex;
