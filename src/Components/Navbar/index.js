@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import { animateScroll as scroll } from 'react-scroll';
 import {FaBars} from 'react-icons/fa'
 import { useLocation } from 'react-router-dom';
 import content from './content.json'
@@ -29,13 +30,23 @@ const Navbar = ({
 }) => {
     const location = useLocation();
 
+    const [scrollNav, setScrollNav] = useState(false);
+
+    const changeNav = () => window.scrollY >= 80 ? setScrollNav(true) : setScrollNav(false);
+
+    useEffect(() => {window.addEventListener('scroll', changeNav)}, [])
+
     var logoElement = logoImg ? <NavLogoImg src={logoImg} alt='logo' /> : logoText
 
     return (
       <>
-        <Nav background={siteBg} alpha={opacity}>
+        <Nav background={siteBg} alpha={opacity} scrollNav={scrollNav}>
           <NavContainer>
-            <NavLogo to="/" color={highlightBg}>
+            <NavLogo 
+              to="/" 
+              onClick={location.pathname == '/' ? scroll.scrollToTop : () => {}} 
+              color={highlightBg}
+            >
               {logoElement}
             </NavLogo>
             <MobileIcon
@@ -47,19 +58,23 @@ const Navbar = ({
             </MobileIcon>
             <NavMenu>
               {content
-                .filter(e =>
+                .filter((e) =>
                   e.paths
                     ? e.paths.includes(location.pathname)
                     : e.excludedPaths
                     ? !e.excludedPaths.includes(location.pathname)
                     : true
                 )
-                .map(e => (
+                .map((e) => (
                   <NavItem key={e.to + "-link"}>
                     <NavLink
                       to={e.to}
                       txtcolor={siteText}
                       activecolor={highlightBg}
+                      smooth={true}
+                      duration={500}
+                      spy={true}
+                      offset={-80}
                     >
                       {e.content}
                     </NavLink>

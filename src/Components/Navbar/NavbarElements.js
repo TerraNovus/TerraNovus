@@ -93,7 +93,7 @@ export const NavLink = styled(LinkScroll)`
     height: 100%;
     cursor: pointer;
 
-    &:active {
+    &.active {
         border-bottom: ${props => `3px solid ${props.activecolor}`};
     }
 `

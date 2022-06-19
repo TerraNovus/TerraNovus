@@ -1,4 +1,6 @@
 import React from 'react'
+import { animateScroll as scroll } from 'react-scroll'
+import { useLocation } from 'react-router-dom'
 import content from './content.json'
 import socialContent from './content-social.js'
 import logo from '../../Images/TerraNovus_logo_01_REDTEXT.png'
@@ -30,6 +32,8 @@ const Footer = ({
     hoverHighlightBg,
     hoverHighlightText
 }) => {
+  const location = useLocation();
+
   return (
     <FooterContainer background={siteBg}>
       <FooterWrap>
@@ -60,7 +64,7 @@ const Footer = ({
         </FooterLinksContainer>
         <SocialMedia>
             <SocialMediaWrap>
-                <SocialLogo to="/">
+                <SocialLogo to={location.pathname} onClick={scroll.scrollToTop}>
                     <SocialImage src={logo}/>
                 </SocialLogo>
                 <WebsiteRights txtColor={siteText}>
