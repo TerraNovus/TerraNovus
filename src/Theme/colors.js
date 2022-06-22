@@ -19,26 +19,30 @@ export const white2 = '#f7f8fa'
 //---STYLES---//
 /* hc = high contrast */
 
-export const darkHighlight = bloodred
-export const darkHighlight2 = darkred
-export const lightHighlight = white
+export const darkHighlight = bloodred;
+export const darkHighlight2 = darkred;
+export const lightHighlight = white;
 
 export const highlights = {darkHighlight, darkHighlight2, lightHighlight}
 
-export const darkBgSite = black
-export const darkBgSite_hc = black
-export const darkBgElement = bloodred
-export const darkBgElement_hc = bloodred
+export const darkBgSite = black;
+export const darkBgSite_hc = black;
+export const darkBgElement = bloodred;
+export const darkBgElement2 = grey1;
+export const darkBgElement_hc = bloodred;
+export const darkBgElement_hc2 = darkred;
 
 export const darkTextSite = black
 export const darkTextSite_hc = black
 export const darkTextElement = bloodred
-export const darkTextElement_hc = bloodred
+export const darkTextElement_hc = bloodred;
 
 export const lightBgSite = white1;
 export const lightBgSite_hc = white;
 export const lightBgElement = white2;
+export const lightBgElement2 = white;
 export const lightBgElement_hc = white;
+export const lightBgElement_hc2 = white2;
 
 export const lightTextSite = white1;
 export const lightTextSite_hc = white;
@@ -50,6 +54,7 @@ export const DarkTheme = {
     siteBg: darkBgSite,
     siteText: lightTextSite,
     elementBg: lightBgElement,
+    elementBg2: darkBgElement2,
     elementText: darkTextElement,
     ...highlights
 }
@@ -58,6 +63,7 @@ export const DarkTheme_hc = {
     siteBg: darkBgSite_hc,
     siteText: lightTextSite_hc,
     elementBg: lightBgElement_hc,
+    elementBg2: darkBgElement_hc2,
     elementText: darkTextElement_hc,
     ...highlights
 }
@@ -66,6 +72,7 @@ export const LightTheme = {
     siteBg: lightBgSite,
     siteText: darkTextSite,
     elementBg: darkBgElement,
+    elementBg2: lightBgElement2,
     elementText: lightTextElement,
     ...highlights
 }
@@ -74,6 +81,7 @@ export const LightTheme_hc = {
     siteBg: lightBgSite_hc,
     siteText: darkTextSite_hc,
     elementBg: darkBgElement_hc,
+    elementBg2: lightBgElement_hc2,
     elementText: lightTextElement_hc,
     ...highlights
 }

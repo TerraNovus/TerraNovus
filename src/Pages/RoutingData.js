@@ -1,4 +1,5 @@
 import Home from ".";
+import Portfolio from "../Components/Portfolio";
 import Signin from "../Components/Signin";
 import UnderConstruction from "../Components/UnderConstruction";
 
@@ -14,8 +15,16 @@ const routingData = [
         id: 'portfolio',
         path: '/portfolio',
         getElement: props => (
-            <UnderConstruction background={props.theme.siteBg} />
+            <Portfolio 
+                siteText={props.theme.siteText}
+                elementBg={props.theme.elementBg}
+                elementBg2={props.theme.elementBg2}
+                highlightTxtColor={props.theme.darkHighlight}
+            />
         )
+        /*getElement: props => (
+            <UnderConstruction background={props.theme.siteBg} />
+        )*/
     },
     {
         id: 'signup',
