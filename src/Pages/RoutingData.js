@@ -1,7 +1,9 @@
 import Home from ".";
+import Careers from "../Components/Careers";
 import Portfolio from "../Components/Portfolio";
 import Signin from "../Components/Signin";
 import UnderConstruction from "../Components/UnderConstruction";
+import Values from "../Components/Values";
 
 const routingData = [
     {
@@ -46,14 +48,14 @@ const routingData = [
         id: 'values',
         path: '/values',
         getElement: props => (
-            <UnderConstruction background={props.theme.background} />
+            <Values siteText={props.theme.siteText} highlightText={props.theme.darkHighlight} />
         )
     },
     {
         id: 'careers',
         path: '/careers',
         getElement: props => (
-            <UnderConstruction background={props.theme.background} />
+            <Careers siteText={props.theme.siteText} highlightText={props.theme.darkHighlight} />
         )
     }
 ]
