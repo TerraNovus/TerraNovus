@@ -22,9 +22,6 @@ const routingData = [
                 highlightTxtColor={props.theme.darkHighlight}
             />
         )
-        /*getElement: props => (
-            <UnderConstruction background={props.theme.siteBg} />
-        )*/
     },
     {
         id: 'signup',

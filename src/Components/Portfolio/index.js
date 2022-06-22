@@ -1,6 +1,13 @@
 import React from 'react'
 import content from './content.js'
-import { PortfolioContainer, PortfolioLinkWrap, PortfolioHeader, PortfolioWrapper, PortfolioLink, PortfolioLinkImg } from './PortfolioElements'
+import {
+    PortfolioContainer,
+    PortfolioLinkWrap,
+    PortfolioHeader,
+    PortfolioWrapper,
+    PortfolioLink,
+    PortfolioLinkImg,
+} from "./PortfolioElements";
 
 const Portfolio = ({
     highlightTxtColor,

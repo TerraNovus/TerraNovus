@@ -6,6 +6,7 @@ import { fadeInUp } from 'react-animations';
 export const PortfolioContainer = styled.div`
     min-height: 100vh;
     width: 100vw;
+    max-width: 100%;
     padding-top: 110px;
 `
 
